@@ -74,7 +74,8 @@ dependencies {
 
     testImplementation "junit:junit:$junitVersion"
     // Optional -- Robolectric environment
-    testImplementation "androidx.test:core:$robolectricVersion"
+    testImplementation "androidx.test:core:$testCoreVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
     androidTestImplementation "androidx.test:runner:$testRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
 }

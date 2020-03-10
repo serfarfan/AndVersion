@@ -16,7 +16,6 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
     val androidVersions by lazy { MutableLiveData<List<Android>>() }
     val loadError by lazy { MutableLiveData<Boolean>() }
     private val disposable: CompositeDisposable = CompositeDisposable()
-
     private val androidApiService = AndroidService()
 
     fun refresh() {
@@ -33,13 +32,11 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
                         loadError.value = false
                         androidVersions.value = androidList
                     }
-
                     override fun onError(e: Throwable) {
                         loadError.value = true
                         e.printStackTrace()
                         Log.e("Error: ", e.localizedMessage)
                     }
-
                 })
         )
     }
